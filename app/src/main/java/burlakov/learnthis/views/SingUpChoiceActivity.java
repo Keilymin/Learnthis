@@ -1,6 +1,7 @@
 package burlakov.learnthis.views;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +23,11 @@ public class SingUpChoiceActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sing_up_choice);
 
+        Toolbar toolbar = findViewById(R.id.tool);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(v -> finish());
+
         imTeacher = findViewById(R.id.buttonTeacher);
         imLearner = findViewById(R.id.buttonLearner);
         imParent = findViewById(R.id.buttonParent);
@@ -36,7 +42,7 @@ public class SingUpChoiceActivity extends AppCompatActivity implements View.OnCl
      */
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(this, SingUpChoiceActivity.class);
+        Intent intent = new Intent(this, SingUpActivity.class);
         int id = v.getId();
         if (id == R.id.buttonTeacher) {
             intent.putExtra("choice", 1);

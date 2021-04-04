@@ -17,4 +17,110 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="@string/sing_up" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/firstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tool"
+        app:met_floatingLabel="normal"
+        app:met_floatingLabelText="@string/first_name"
+        android:hint="@string/first_name"
+        app:met_minCharacters = "1"
+        />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/secondName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstName"
+        app:met_floatingLabel="normal"
+        app:met_floatingLabelText="@string/second_name"
+        android:hint="@string/second_name"
+        app:met_minCharacters = "1"
+        />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:text=""
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondName"
+        app:met_floatingLabel="normal"
+        app:met_floatingLabelText="@string/email"
+        android:hint="@string/email"
+        />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:met_floatingLabel="normal"
+        app:met_floatingLabelText="@string/password"
+        android:hint="@string/password"
+        app:met_minCharacters = "6"
+        app:met_maxCharacters = "24"
+        />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/replyPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:met_floatingLabel="normal"
+        app:met_floatingLabelText="@string/reply_password"
+        android:hint="@string/reply_password"
+        app:met_minCharacters = "6"
+        app:met_maxCharacters = "24"
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="@dimen/base_button_width"
+        android:layout_height="@dimen/base_button_height"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/replyPassword" />
 </androidx.constraintlayout.widget.ConstraintLayout>

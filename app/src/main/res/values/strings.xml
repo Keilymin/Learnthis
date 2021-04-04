@@ -17,4 +17,10 @@
     <string name="im_teacher">Я учитель</string>
     <string name="im_learner">Я ученик</string>
     <string name="im_parent">Я батько</string>
+    <string name="first_name">"Ім'я"</string>
+    <string name="second_name">Прізвище</string>
+    <string name="email">Эл. Пошта</string>
+    <string name="password">Пароль</string>
+    <string name="reply_password">Повтор паролю</string>
+    <string name="email_error_message">Не коректний адрес пошти</string>
 </resources>
