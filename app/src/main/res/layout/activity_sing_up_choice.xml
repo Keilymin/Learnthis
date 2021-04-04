@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.HomeActivity">
+    tools:context=".views.SingUpChoiceActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tool"
@@ -16,28 +16,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="@string/app_name" />
+        app:title="@string/sing_up" />
 
     <Button
-        android:id="@+id/buttonLogIn"
+        android:id="@+id/buttonTeacher"
         android:layout_width="@dimen/base_button_width"
         android:layout_height="@dimen/base_button_height"
         android:layout_marginTop="128dp"
-        android:text="@string/log_in"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSingUp"
+        android:text="@string/im_teacher"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tool" />
 
     <Button
-        android:id="@+id/buttonSingUp"
+        android:id="@+id/buttonLearner"
         android:layout_width="@dimen/base_button_width"
         android:layout_height="@dimen/base_button_height"
-        android:layout_marginTop="64dp"
-        android:text="@string/sing_up"
+        android:layout_marginTop="32dp"
+        android:text="@string/im_learner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogIn" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonTeacher" />
+
+    <Button
+        android:id="@+id/buttonParent"
+        android:layout_width="@dimen/base_button_width"
+        android:layout_height="@dimen/base_button_height"
+        android:layout_marginTop="32dp"
+        android:text="@string/im_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLearner" />
 </androidx.constraintlayout.widget.ConstraintLayout>

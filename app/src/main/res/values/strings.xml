@@ -11,4 +11,10 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string name="sing_up">Реєстрація</string>
+    <string name="log_in">Вхід</string>
+    <string name="im_teacher">Я учитель</string>
+    <string name="im_learner">Я ученик</string>
+    <string name="im_parent">Я батько</string>
 </resources>
