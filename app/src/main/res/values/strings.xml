@@ -36,5 +36,6 @@
     <string name="error_email">Эл. Пошта введена не корректно</string>
     <string name="error_password">Довжина паролю не відповідає необхідній</string>
     <string name="error_reply_password">Повтор паролю не співпадає</string>
+    <string name="error_email_verified">Підтвердіть эмайл за допомогою листа який прийшов до вашої скриньки</string>
 
 </resources>

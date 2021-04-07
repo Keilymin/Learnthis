@@ -80,7 +80,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUp.View, Vi
         if (firstName.getText().toString().length() > 0) {
             if (secondName.getText().toString().length() > 0) {
                 if (org.apache.commons.validator.routines.EmailValidator.getInstance().isValid(email.getText().toString())) {
-                    if (password.getText().toString().length() < 24 || password.getText().toString().length() > 6) {
+                    if (password.getText().toString().length() < 24 && password.getText().toString().length() >= 6) {
                         if (password.getText().toString().equals(replyPassword.getText().toString())) {
                             Role role = getRole();
                             User user = new User(firstName.getText().toString(), secondName.getText().toString(), email.getText().toString(), role);
