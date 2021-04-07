@@ -13,7 +13,7 @@ import burlakov.learnthis.R;
  * Класс View главного меню для выбора входа или регистрации
  */
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
-    Button singUpButton;
+    Button signUpButton;
     Button logInButton;
 
     @Override
@@ -21,9 +21,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        singUpButton = findViewById(R.id.buttonSingUp);
+        signUpButton = findViewById(R.id.buttonSignUp);
         logInButton = findViewById(R.id.buttonLogIn);
-        singUpButton.setOnClickListener(this);
+        signUpButton.setOnClickListener(this);
         logInButton.setOnClickListener(this);
     }
 
@@ -33,8 +33,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if (id == R.id.buttonSingUp) {
-            Intent intent = new Intent(this, SingUpChoiceActivity.class);
+        if (id == R.id.buttonSignUp) {
+            Intent intent = new Intent(this, SignUpChoiceActivity.class);
             startActivity(intent);
         } else if (id == R.id.buttonLogIn) {
             Intent intent = new Intent(this, LogInActivity.class);

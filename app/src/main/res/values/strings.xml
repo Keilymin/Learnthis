@@ -12,8 +12,10 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
-    <string name="sing_up">Реєстрація</string>
+    <string name="sign_up">Реєстрація</string>
+    <string name="do_sign_up">Зареєструватися</string>
     <string name="log_in">Вхід</string>
+    <string name="do_log_in">Увійти</string>
     <string name="im_teacher">Я учитель</string>
     <string name="im_learner">Я ученик</string>
     <string name="im_parent">Я батько</string>
@@ -23,4 +25,16 @@
     <string name="password">Пароль</string>
     <string name="reply_password">Повтор паролю</string>
     <string name="email_error_message">Не коректний адрес пошти</string>
+    <string name="ok">Добре</string>
+
+    <string name="success_sign_up_message">Ви були зареєстровані. Зараз на вашу пошту прийде лист з
+        підтвердженням електронної пошти. Будь ласка підтвердіть пошту та можете увійти до акаунту.
+    </string>
+
+    <string name="error_firstName">"Заповніть поле Ім'я"</string>
+    <string name="error_secondName">Заповніть поле Прізвище</string>
+    <string name="error_email">Эл. Пошта введена не корректно</string>
+    <string name="error_password">Довжина паролю не відповідає необхідній</string>
+    <string name="error_reply_password">Повтор паролю не співпадає</string>
+
 </resources>

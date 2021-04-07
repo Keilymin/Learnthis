@@ -13,7 +13,7 @@ import burlakov.learnthis.R;
 /**
  * Класс View для выбора типа пользователя при регистрации
  */
-public class SingUpChoiceActivity extends AppCompatActivity implements View.OnClickListener {
+public class SignUpChoiceActivity extends AppCompatActivity implements View.OnClickListener {
     Button imTeacher;
     Button imLearner;
     Button imParent;
@@ -21,7 +21,7 @@ public class SingUpChoiceActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sing_up_choice);
+        setContentView(R.layout.activity_sign_up_choice);
 
         Toolbar toolbar = findViewById(R.id.tool);
         setSupportActionBar(toolbar);
@@ -42,14 +42,14 @@ public class SingUpChoiceActivity extends AppCompatActivity implements View.OnCl
      */
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(this, SingUpActivity.class);
+        Intent intent = new Intent(this, SignUpActivity.class);
         int id = v.getId();
         if (id == R.id.buttonTeacher) {
-            intent.putExtra("choice", 1);
+            intent.putExtra("role", 1);
         } else if (id == R.id.buttonLearner) {
-            intent.putExtra("choice", 2);
+            intent.putExtra("role", 2);
         } else if (id == R.id.buttonParent) {
-            intent.putExtra("choice", 3);
+            intent.putExtra("role", 3);
         }
         startActivity(intent);
     }

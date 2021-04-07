@@ -30,7 +30,7 @@ public class User {
     /**
      * Роль пользователя
      */
-    private final Role role;
+    private Role role;
 
     public User(@NotNull String firstName, @NotNull String secondName, @NotNull String email, @NotNull Role role) {
         if (!firstName.equals("")) {
@@ -45,6 +45,23 @@ public class User {
         this.role = role;
     }
 
+    public User(String firstName, String secondName, String email, String id, String avatarImage) {
+        if (!firstName.equals("")) {
+            this.firstName = firstName;
+        } else throw new RuntimeException("Имя не может состоять из пустого поля");
+        if (!secondName.equals("")) {
+            this.secondName = secondName;
+        } else throw new RuntimeException("Фамилия не может состоять из пустого поля");
+        if (EmailValidator.getInstance().isValid(email)) {
+            this.email = email;
+        } else throw new RuntimeException("Не валидный эмайл");
+        if (!id.equals("")) {
+            this.id = id;
+        } else throw new RuntimeException("Айди не может быть пустым полем");
+        if (!avatarImage.equals("")) {
+            this.avatarImage = avatarImage;
+        } else throw new RuntimeException("Аватар не может быть пустым полем");
+    }
 
     public User(@NotNull String firstName, @NotNull String secondName, @NotNull String email, @NotNull String id, @NotNull String avatarImage, @NotNull Role role) {
         if (!firstName.equals("")) {
