@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import burlakov.learnthis.R;
 
 /**
@@ -15,16 +18,25 @@ import burlakov.learnthis.R;
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     Button signUpButton;
     Button logInButton;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
         signUpButton = findViewById(R.id.buttonSignUp);
         logInButton = findViewById(R.id.buttonLogIn);
         signUpButton.setOnClickListener(this);
         logInButton.setOnClickListener(this);
+        if (currentUser != null) {
+                Intent intent = new Intent(this, MenuActivity.class);
+                intent.putExtra("role","Teacher");
+                startActivity(intent);
+        }
     }
 
     /**

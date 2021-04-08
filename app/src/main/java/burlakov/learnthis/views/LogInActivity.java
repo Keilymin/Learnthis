@@ -1,6 +1,7 @@
 package burlakov.learnthis.views;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -17,6 +18,9 @@ import burlakov.learnthis.contracts.LogIn;
 import burlakov.learnthis.presenters.LogInPresenter;
 import burlakov.learnthis.util.EmailValidator;
 
+/**
+ * Класс View для входа в систему
+ */
 public class LogInActivity extends AppCompatActivity implements LogIn.View, View.OnClickListener {
     MaterialEditText email;
     MaterialEditText password;
@@ -28,6 +32,11 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+
+        Toolbar toolbar = findViewById(R.id.tool);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(v -> finish());
 
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
@@ -59,12 +68,20 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
         message.setTextColor(Color.RED);
     }
 
+    /**
+     * Показ ошибки
+     *
+     * @param message Сообщение ошибки
+     */
     @Override
     public void showError(String message) {
         this.message.setText(message);
         this.message.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * Вход в систему
+     */
     void logIn() {
         if (org.apache.commons.validator.routines.EmailValidator.getInstance().isValid(email.getText().toString())) {
             if (password.getText().toString().length() < 24 && password.getText().toString().length() >= 6) {
@@ -77,6 +94,9 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
         }
     }
 
+    /**
+     * Обработка клика на вход
+     */
     @Override
     public void onClick(View v) {
         int id = v.getId();

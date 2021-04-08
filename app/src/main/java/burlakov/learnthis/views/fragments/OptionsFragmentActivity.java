@@ -10,13 +10,13 @@ import androidx.fragment.app.Fragment;
 
 import burlakov.learnthis.R;
 
-public class SlideshowFragmentActivity extends Fragment {
+public class OptionsFragmentActivity extends Fragment {
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+        View root = inflater.inflate(R.layout.fragment_options, container, false);
 
         return root;
     }

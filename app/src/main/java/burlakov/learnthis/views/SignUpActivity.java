@@ -1,6 +1,7 @@
 package burlakov.learnthis.views;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 
 import android.content.Intent;
@@ -40,6 +41,11 @@ public class SignUpActivity extends AppCompatActivity implements SignUp.View, Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        Toolbar toolbar = findViewById(R.id.tool);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(v -> finish());
+
         firstName = findViewById(R.id.firstName);
         secondName = findViewById(R.id.secondName);
         email = findViewById(R.id.email);
@@ -47,7 +53,6 @@ public class SignUpActivity extends AppCompatActivity implements SignUp.View, Vi
         replyPassword = findViewById(R.id.replyPassword);
         message = findViewById(R.id.message);
         signUpButton = findViewById(R.id.buttonSignUp);
-
         presenter = new SignUpPresenter(this, this);
 
         EmailValidator validator = new EmailValidator(getResources().getString(R.string.email_error_message));

@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -60,10 +61,14 @@ public class SignUpPresenter implements SignUp.Presenter {
                         HashMap<String, String> hashMap = new HashMap<>();
                         hashMap.put("id", auth.getUid());
                         hashMap.put("email", user.getEmail());
-                        hashMap.put("FirstName", user.getFirstName());
-                        hashMap.put("SecondName", user.getSecondName());
+                        hashMap.put("firstName", user.getFirstName());
+                        hashMap.put("secondName", user.getSecondName());
                         hashMap.put("image", "def");
                         myRef.setValue(hashMap);
+                        UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(user.getSecondName() + " " + user.getFirstName() + " " + user.getRole().toString())
+                                .build();
+                        firebaseUser.updateProfile(profileUpdate);
                         firebaseUser.sendEmailVerification().addOnCompleteListener(task1 -> {
                             auth.signOut();
                             view.showSuccessMessage();

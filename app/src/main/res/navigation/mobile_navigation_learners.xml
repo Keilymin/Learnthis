@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_courses">
+
+    <fragment
+        android:id="@+id/nav_courses"
+        android:name="burlakov.learnthis.views.fragments.LearnerCoursesFragmentActivity"
+        android:label="@string/menu_courses"
+        tools:layout="@layout/fragment_courses_learner" />
+
+    <fragment
+        android:id="@+id/nav_marks"
+        android:name="burlakov.learnthis.views.fragments.LearnerMarksFragmentActivity"
+        android:label="@string/menu_marks"
+        tools:layout="@layout/fragment_marks_learner" />
+
+    <fragment
+        android:id="@+id/nav_options"
+        android:name="burlakov.learnthis.views.fragments.OptionsFragmentActivity"
+        android:label="@string/menu_options"
+        tools:layout="@layout/fragment_options" />
+</navigation>
