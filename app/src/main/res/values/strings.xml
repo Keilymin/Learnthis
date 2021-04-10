@@ -26,11 +26,15 @@
     <string name="reply_password">Повтор паролю</string>
     <string name="email_error_message">Не коректний адрес пошти</string>
     <string name="ok">Добре</string>
-
+    <string name="back">Назад</string>
+    <string name="password_forgot">Забули пароль?</string>
     <string name="success_sign_up_message">Ви були зареєстровані. Зараз на вашу пошту прийде лист з
         підтвердженням електронної пошти. Будь ласка підтвердіть пошту та можете увійти до акаунту.
     </string>
-
+    <string name="forgot_password_message">Введіть пошту на яку ви були зареєстровані. Вам прийде лист для заміни паролю.
+    </string>
+    <string name="forgot_password_success_message">На вашу пошту висланий лист для зміни паролю
+    </string>
     <string name="error_firstName">"Заповніть поле Ім'я"</string>
     <string name="error_secondName">Заповніть поле Прізвище</string>
     <string name="error_email">Эл. Пошта введена не корректно</string>

@@ -2,6 +2,7 @@ package burlakov.learnthis.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.DialogFragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -17,6 +18,8 @@ import burlakov.learnthis.R;
 import burlakov.learnthis.contracts.LogIn;
 import burlakov.learnthis.presenters.LogInPresenter;
 import burlakov.learnthis.util.EmailValidator;
+import burlakov.learnthis.views.dialogs.ForgotPasswordDialog;
+import burlakov.learnthis.views.dialogs.SuccessSignUpDialog;
 
 /**
  * Класс View для входа в систему
@@ -26,6 +29,7 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
     MaterialEditText password;
     LogInPresenter presenter;
     TextView message;
+    TextView passwordForgot;
     Button logInButton;
 
     @Override
@@ -42,6 +46,7 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
         password = findViewById(R.id.password);
         message = findViewById(R.id.message);
         logInButton = findViewById(R.id.buttonLogIn);
+        passwordForgot = findViewById(R.id.pass_forgot);
 
         presenter = new LogInPresenter(this, this);
 
@@ -62,7 +67,7 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
                 email.validate();
             }
         });
-
+        passwordForgot.setOnClickListener(this);
         logInButton.setOnClickListener(this);
 
         message.setTextColor(Color.RED);
@@ -102,6 +107,9 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
         int id = v.getId();
         if (id == R.id.buttonLogIn) {
             logIn();
+        } else if (id == R.id.pass_forgot) {
+            ForgotPasswordDialog dialog = new ForgotPasswordDialog(this,this);
+            dialog.show(getSupportFragmentManager(), "dia");
         }
     }
 }
