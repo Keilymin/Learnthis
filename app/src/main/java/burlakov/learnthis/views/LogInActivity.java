@@ -60,15 +60,11 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
      * @param message Сообщение ошибки
      */
     @Override
-    public void showError(String message) {
-        MessageDialog dialog = new MessageDialog(message, this, false);
+    public void showMessage(String message, Boolean isPositive) {
+        MessageDialog dialog = new MessageDialog(message, this, isPositive);
         dialog.show(getSupportFragmentManager(), "dia");
     }
 
-    public void showSuccess(String message) {
-        MessageDialog dialog = new MessageDialog(message, this, true);
-        dialog.show(getSupportFragmentManager(), "dia");
-    }
 
     /**
      * Вход в систему
@@ -78,10 +74,10 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
             if (password.getText().toString().length() < 24 && password.getText().toString().length() >= 6) {
                 presenter.logIn(email.getText().toString(), password.getText().toString());
             } else {
-                showError(getResources().getString(R.string.error_password));
+                showMessage(getResources().getString(R.string.error_password), false);
             }
         } else {
-            showError(getResources().getString(R.string.email_error_message));
+            showMessage(getResources().getString(R.string.email_error_message), false);
         }
     }
 
@@ -94,7 +90,7 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
         if (id == R.id.buttonLogIn) {
             logIn();
         } else if (id == R.id.pass_forgot) {
-            ForgotPasswordDialog dialog = new ForgotPasswordDialog(this, this);
+            ForgotPasswordDialog dialog = new ForgotPasswordDialog(this);
             dialog.show(getSupportFragmentManager(), "dia");
         }
     }

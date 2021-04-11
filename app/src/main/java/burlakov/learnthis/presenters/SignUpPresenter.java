@@ -60,7 +60,6 @@ public class SignUpPresenter implements SignUp.Presenter {
                         }
                         HashMap<String, String> hashMap = new HashMap<>();
                         hashMap.put("id", auth.getUid());
-                        hashMap.put("email", user.getEmail());
                         hashMap.put("firstName", user.getFirstName());
                         hashMap.put("secondName", user.getSecondName());
                         hashMap.put("image", "def");

@@ -50,4 +50,10 @@
     <string name="edit">Змінити</string>
     <string name="image">Аватар</string>
     <string name="sing_out">Вийти з акаунту</string>
+    <string name="equals">Ви не змінили значення</string>
+    <string name="success">Успішно</string>
+    <string name="upload">Завантажити</string>
+    <string name="upload_on">Завантаження</string>
+    <string name="upload_on_process">Завантаження в процессі</string>
+    <string name="error">Помилка</string>
 </resources>

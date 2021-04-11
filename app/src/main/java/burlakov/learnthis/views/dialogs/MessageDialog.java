@@ -15,6 +15,9 @@ import androidx.fragment.app.DialogFragment;
 
 import burlakov.learnthis.R;
 
+/**
+ * Базовый диалог для показа сообщений пользователю
+ */
 public class MessageDialog extends DialogFragment {
     String message;
     Context context;
@@ -42,6 +45,9 @@ public class MessageDialog extends DialogFragment {
         return builder.create();
     }
 
+    /**
+     * В зависимости от параметра isPositive, показывает положительное или негативное сообщение
+     */
     @Override
     public void onStart() {
         super.onStart();

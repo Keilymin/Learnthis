@@ -9,6 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import burlakov.learnthis.R;
 
 public class LearnerMarksFragmentActivity extends Fragment {
@@ -17,7 +20,8 @@ public class LearnerMarksFragmentActivity extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_marks_learner, container, false);
         TextView textView = root.findViewById(R.id.textView);
-        textView.setText(this.getClass().toString());
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        textView.setText(user.getDisplayName());
         return root;
     }
 }

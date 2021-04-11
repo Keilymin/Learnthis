@@ -32,6 +32,11 @@ public class EmailValidator extends METValidator {
             return org.apache.commons.validator.routines.EmailValidator.getInstance().isValid(text.toString());
         } else return false;
     }
+
+    /** Создает проверку валидации для MaterialEditText
+     * @param email MaterialEditText
+     * @param context Context текущего view
+     */
     static public void setValidateMaterialEditView(MaterialEditText email, Context context){
         EmailValidator validator = new EmailValidator(context.getResources().getString(R.string.email_error_message));
         email.addValidator(validator);

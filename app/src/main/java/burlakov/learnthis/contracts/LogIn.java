@@ -11,11 +11,12 @@ public interface LogIn {
      */
     interface View {
         /**
-         * Метод должен выводить ошибку на экран
+         * Метод должен выводить сообщение на экран
          *
          * @param message Сообщение ошибки
          */
-        void showError(String message);
+        void showMessage(String message,Boolean isPositive);
+
     }
 
     /**

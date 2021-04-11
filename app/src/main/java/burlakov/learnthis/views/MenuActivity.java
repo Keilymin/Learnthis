@@ -58,7 +58,6 @@ public class MenuActivity extends AppCompatActivity {
         currentUser = mAuth.getCurrentUser();
         String[] strings = Objects.requireNonNull(currentUser.getDisplayName()).split(" ");
         role = strings[2] + "s";
-        nameInfo = strings[0] + " " + strings[1];
         if (role.equals(Role.TEACHER.toString() + "s")) {
             setContentView(R.layout.activity_teacher_menu);
         } else if (role.equals(Role.LEARNER.toString() + "s")) {
@@ -103,6 +102,8 @@ public class MenuActivity extends AppCompatActivity {
      * Обновляет интерфейс
      */
     public void updateUI() {
+        String[] strings = Objects.requireNonNull(currentUser.getDisplayName()).split(" ");
+        nameInfo = strings[0] + " " + strings[1];
         email.setText(currentUser.getEmail());
         name.setText(nameInfo);
         database = FirebaseDatabase.getInstance();

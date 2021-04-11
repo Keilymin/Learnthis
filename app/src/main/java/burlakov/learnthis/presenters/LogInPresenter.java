@@ -45,10 +45,10 @@ public class LogInPresenter implements LogIn.Presenter {
                             Intent intent = new Intent(context, MenuActivity.class);
                             context.startActivity(intent);
                         } else {
-                            view.showError(context.getResources().getString(R.string.error_email_verified));
+                            view.showMessage(context.getResources().getString(R.string.error_email_verified),true);
                         }
                     } else {
-                        view.showError(Objects.requireNonNull(task.getException()).getMessage());
+                        view.showMessage(Objects.requireNonNull(task.getException()).getMessage(),false);
                     }
                 });
     }

@@ -28,12 +28,10 @@ import burlakov.learnthis.views.LogInActivity;
 public class ForgotPasswordDialog extends DialogFragment {
     MaterialEditText email;
     FirebaseAuth auth;
-    LogInActivity view;
-    Context context;
+    LogIn.View view;
 
-    public ForgotPasswordDialog(LogInActivity view, Context context) {
+    public ForgotPasswordDialog(LogIn.View view) {
         this.view = view;
-        this.context = context;
     }
 
 
@@ -70,13 +68,13 @@ public class ForgotPasswordDialog extends DialogFragment {
         if (org.apache.commons.validator.routines.EmailValidator.getInstance().isValid(email.getText().toString())) {
             auth.sendPasswordResetEmail(email.getText().toString()).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    view.showSuccess(context.getResources().getString(R.string.forgot_password_success_message));
+                    view.showMessage(getResources().getString(R.string.forgot_password_success_message), true);
                 } else {
-                    view.showError(task.getException().getMessage());
+                    view.showMessage(task.getException().getMessage(), false);
                 }
             });
         } else {
-            view.showError(context.getResources().getString(R.string.error_email));
+            view.showMessage(getResources().getString(R.string.error_email), false);
         }
     }
 }

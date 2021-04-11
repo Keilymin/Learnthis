@@ -2,9 +2,7 @@ package burlakov.learnthis.views.dialogs;
 
 import android.app.Dialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,8 +13,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,6 +23,9 @@ import burlakov.learnthis.R;
 import burlakov.learnthis.util.EmailValidator;
 import burlakov.learnthis.views.fragments.OptionsFragmentActivity;
 
+/**
+ * Диалог для изменения эмайла
+ */
 public class EditEmailDialog extends DialogFragment {
     OptionsFragmentActivity view;
     MaterialEditText email;
@@ -64,7 +63,10 @@ public class EditEmailDialog extends DialogFragment {
         change.setOnClickListener(t -> changeEmail());
     }
 
-    private boolean changeEmail() {
+    /**
+     * Изменяет текущий эмайл
+     */
+    private void changeEmail() {
         if (org.apache.commons.validator.routines.EmailValidator.getInstance().isValid(email.getText().toString())) {
             if (org.apache.commons.validator.routines.EmailValidator.getInstance().isValid(newEmail.getText().toString())) {
                 if (password.getText().toString().length() < 24 && password.getText().toString().length() >= 6) {
@@ -97,6 +99,5 @@ public class EditEmailDialog extends DialogFragment {
         } else {
             error.setText(getResources().getString(R.string.old_email_error_message));
         }
-        return false;
     }
 }
