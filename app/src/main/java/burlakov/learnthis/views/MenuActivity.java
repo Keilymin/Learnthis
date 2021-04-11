@@ -29,6 +29,7 @@ import java.util.Objects;
 
 import burlakov.learnthis.R;
 import burlakov.learnthis.models.Role;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Стартовый класс view содержит в себе связь с фрагментами и работу с боковым меню.
@@ -38,7 +39,7 @@ public class MenuActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private FirebaseAuth mAuth;
-    private ImageView image;
+    private CircleImageView image;
     private TextView name;
     private TextView email;
     String avatar;

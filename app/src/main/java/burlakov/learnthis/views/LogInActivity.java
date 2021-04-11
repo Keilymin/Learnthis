@@ -19,6 +19,7 @@ import burlakov.learnthis.contracts.LogIn;
 import burlakov.learnthis.presenters.LogInPresenter;
 import burlakov.learnthis.util.EmailValidator;
 import burlakov.learnthis.views.dialogs.ForgotPasswordDialog;
+import burlakov.learnthis.views.dialogs.MessageDialog;
 import burlakov.learnthis.views.dialogs.SuccessSignUpDialog;
 
 /**
@@ -28,7 +29,6 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
     MaterialEditText email;
     MaterialEditText password;
     LogInPresenter presenter;
-    TextView message;
     TextView passwordForgot;
     Button logInButton;
 
@@ -44,33 +44,14 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
 
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
-        message = findViewById(R.id.message);
         logInButton = findViewById(R.id.buttonLogIn);
         passwordForgot = findViewById(R.id.pass_forgot);
 
         presenter = new LogInPresenter(this, this);
 
-        EmailValidator validator = new EmailValidator(getResources().getString(R.string.email_error_message));
-        email.addValidator(validator);
-        email.validate();
-        email.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                email.validate();
-            }
-        });
+        EmailValidator.setValidateMaterialEditView(email, this);
         passwordForgot.setOnClickListener(this);
         logInButton.setOnClickListener(this);
-
-        message.setTextColor(Color.RED);
     }
 
     /**
@@ -80,8 +61,13 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
      */
     @Override
     public void showError(String message) {
-        this.message.setText(message);
-        this.message.setVisibility(View.VISIBLE);
+        MessageDialog dialog = new MessageDialog(message, this, false);
+        dialog.show(getSupportFragmentManager(), "dia");
+    }
+
+    public void showSuccess(String message) {
+        MessageDialog dialog = new MessageDialog(message, this, true);
+        dialog.show(getSupportFragmentManager(), "dia");
     }
 
     /**
@@ -108,7 +94,7 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
         if (id == R.id.buttonLogIn) {
             logIn();
         } else if (id == R.id.pass_forgot) {
-            ForgotPasswordDialog dialog = new ForgotPasswordDialog(this,this);
+            ForgotPasswordDialog dialog = new ForgotPasswordDialog(this, this);
             dialog.show(getSupportFragmentManager(), "dia");
         }
     }

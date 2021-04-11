@@ -21,10 +21,16 @@
     <string name="im_parent">Я батько</string>
     <string name="first_name">"Ім'я"</string>
     <string name="second_name">Прізвище</string>
+    <string name="f_name_and_s_name">"Прізвище та Ім'я"</string>
     <string name="email">Эл. Пошта</string>
+    <string name="new_email">Нова Эл. Пошта</string>
+    <string name="old_email">Стара Эл. Пошта</string>
     <string name="password">Пароль</string>
+    <string name="edited_email">Перейдіть за посиланням у листі що вам прийшло на эмайл для підтвердження і зміни пошти на нову</string>
     <string name="reply_password">Повтор паролю</string>
     <string name="email_error_message">Не коректний адрес пошти</string>
+    <string name="new_email_error_message">Не коректний адрес нової пошти</string>
+    <string name="old_email_error_message">Не коректний адрес старої пошти</string>
     <string name="ok">Добре</string>
     <string name="back">Назад</string>
     <string name="password_forgot">Забули пароль?</string>
@@ -41,5 +47,7 @@
     <string name="error_password">Довжина паролю не відповідає необхідній</string>
     <string name="error_reply_password">Повтор паролю не співпадає</string>
     <string name="error_email_verified">Підтвердіть эмайл за допомогою листа який прийшов до вашої скриньки</string>
-
+    <string name="edit">Змінити</string>
+    <string name="image">Аватар</string>
+    <string name="sing_out">Вийти з акаунту</string>
 </resources>

@@ -20,14 +20,18 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 import burlakov.learnthis.R;
 import burlakov.learnthis.contracts.LogIn;
 import burlakov.learnthis.util.EmailValidator;
+import burlakov.learnthis.views.LogInActivity;
 
+/**
+ * Диалог для востановления пароля
+ */
 public class ForgotPasswordDialog extends DialogFragment {
     MaterialEditText email;
     FirebaseAuth auth;
-    LogIn.View view;
+    LogInActivity view;
     Context context;
 
-    public ForgotPasswordDialog(LogIn.View view, Context context) {
+    public ForgotPasswordDialog(LogInActivity view, Context context) {
         this.view = view;
         this.context = context;
     }
@@ -56,35 +60,22 @@ public class ForgotPasswordDialog extends DialogFragment {
 
         auth = FirebaseAuth.getInstance();
         email = getDialog().findViewById(R.id.email);
-        EmailValidator validator = new EmailValidator(getResources().getString(R.string.email_error_message));
-        email.addValidator(validator);
-        email.validate();
-        email.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                email.validate();
-            }
-        });
+        EmailValidator.setValidateMaterialEditView(email, getContext());
     }
 
+    /**
+     * Отправка сообщения на эмайл
+     */
     private void sendEmail() {
         if (org.apache.commons.validator.routines.EmailValidator.getInstance().isValid(email.getText().toString())) {
             auth.sendPasswordResetEmail(email.getText().toString()).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    view.showError(context.getResources().getString(R.string.forgot_password_success_message));
+                    view.showSuccess(context.getResources().getString(R.string.forgot_password_success_message));
                 } else {
                     view.showError(task.getException().getMessage());
                 }
             });
-        }else {
+        } else {
             view.showError(context.getResources().getString(R.string.error_email));
         }
     }

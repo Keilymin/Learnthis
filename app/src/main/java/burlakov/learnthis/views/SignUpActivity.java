@@ -21,6 +21,7 @@ import burlakov.learnthis.models.Role;
 import burlakov.learnthis.models.User;
 import burlakov.learnthis.presenters.SignUpPresenter;
 import burlakov.learnthis.util.EmailValidator;
+import burlakov.learnthis.views.dialogs.MessageDialog;
 import burlakov.learnthis.views.dialogs.SuccessSignUpDialog;
 
 /**
@@ -33,7 +34,6 @@ public class SignUpActivity extends AppCompatActivity implements SignUp.View, Vi
     MaterialEditText password;
     MaterialEditText replyPassword;
     SignUpPresenter presenter;
-    TextView message;
     Button signUpButton;
 
     @Override
@@ -51,31 +51,13 @@ public class SignUpActivity extends AppCompatActivity implements SignUp.View, Vi
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         replyPassword = findViewById(R.id.replyPassword);
-        message = findViewById(R.id.message);
         signUpButton = findViewById(R.id.buttonSignUp);
         presenter = new SignUpPresenter(this, this);
 
-        EmailValidator validator = new EmailValidator(getResources().getString(R.string.email_error_message));
-        email.addValidator(validator);
-        email.validate();
-        email.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                email.validate();
-            }
-        });
+        EmailValidator.setValidateMaterialEditView(email, this);
 
         signUpButton.setOnClickListener(this);
 
-        message.setTextColor(Color.RED);
     }
 
     /**
@@ -135,8 +117,8 @@ public class SignUpActivity extends AppCompatActivity implements SignUp.View, Vi
      */
     @Override
     public void showError(String message) {
-        this.message.setText(message);
-        this.message.setVisibility(View.VISIBLE);
+        MessageDialog dialog = new MessageDialog(message, this, false);
+        dialog.show(getSupportFragmentManager(), "dia");
     }
 
     /**

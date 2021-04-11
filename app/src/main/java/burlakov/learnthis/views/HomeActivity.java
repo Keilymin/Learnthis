@@ -11,6 +11,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import burlakov.learnthis.R;
+import burlakov.learnthis.views.dialogs.ForgotPasswordDialog;
+import burlakov.learnthis.views.dialogs.MessageDialog;
 
 /**
  * Класс View главного меню для выбора входа или регистрации
@@ -34,7 +36,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         logInButton.setOnClickListener(this);
         if (currentUser != null) {
                 Intent intent = new Intent(this, MenuActivity.class);
-                intent.putExtra("role","Teacher");
                 startActivity(intent);
         }
     }
