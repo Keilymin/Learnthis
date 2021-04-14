@@ -1,13 +1,9 @@
-package burlakov.learnthis.views.dialogs;
+package burlakov.learnthis.presenters.dialogs;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +16,6 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 import burlakov.learnthis.R;
 import burlakov.learnthis.contracts.LogIn;
 import burlakov.learnthis.util.EmailValidator;
-import burlakov.learnthis.views.LogInActivity;
 
 /**
  * Диалог для востановления пароля

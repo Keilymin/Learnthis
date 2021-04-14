@@ -15,11 +15,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import burlakov.learnthis.R;
 import burlakov.learnthis.contracts.LogIn;
 import burlakov.learnthis.views.HomeActivity;
-import burlakov.learnthis.views.dialogs.EditEmailDialog;
-import burlakov.learnthis.views.dialogs.EditImageDialog;
-import burlakov.learnthis.views.dialogs.EditNameDialog;
-import burlakov.learnthis.views.dialogs.ForgotPasswordDialog;
-import burlakov.learnthis.views.dialogs.MessageDialog;
+import burlakov.learnthis.presenters.dialogs.EditEmailDialog;
+import burlakov.learnthis.presenters.dialogs.EditImageDialog;
+import burlakov.learnthis.presenters.dialogs.EditNameDialog;
+import burlakov.learnthis.presenters.dialogs.ForgotPasswordDialog;
+import burlakov.learnthis.presenters.dialogs.MessageDialog;
 
 /**
  * Общий фрагмент для настроек акаунта

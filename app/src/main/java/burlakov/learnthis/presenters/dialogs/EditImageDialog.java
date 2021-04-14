@@ -1,4 +1,4 @@
-package burlakov.learnthis.views.dialogs;
+package burlakov.learnthis.presenters.dialogs;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -14,7 +14,6 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;

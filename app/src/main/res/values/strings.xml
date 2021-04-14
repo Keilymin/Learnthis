@@ -42,6 +42,7 @@
     <string name="forgot_password_success_message">На вашу пошту висланий лист для зміни паролю
     </string>
     <string name="error_firstName">"Заповніть поле Ім'я"</string>
+    <string name="error_course_name">"Заповніть поле Курс"</string>
     <string name="error_secondName">Заповніть поле Прізвище</string>
     <string name="error_email">Эл. Пошта введена не корректно</string>
     <string name="error_password">Довжина паролю не відповідає необхідній</string>
@@ -56,4 +57,9 @@
     <string name="upload_on">Завантаження</string>
     <string name="upload_on_process">Завантаження в процессі</string>
     <string name="error">Помилка</string>
+    <string name="create_course">Створити курс</string>
+    <string name="course">Курс</string>
+    <string name="enter_course_name">Введіть назву курсу</string>
+    <string name="success_course_created">Курс успешно создан</string>
+    <string name="delete">Видалити</string>
 </resources>

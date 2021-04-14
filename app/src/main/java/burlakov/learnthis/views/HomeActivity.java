@@ -11,8 +11,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import burlakov.learnthis.R;
-import burlakov.learnthis.views.dialogs.ForgotPasswordDialog;
-import burlakov.learnthis.views.dialogs.MessageDialog;
 
 /**
  * Класс View главного меню для выбора входа или регистрации

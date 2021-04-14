@@ -9,14 +9,7 @@ public interface LogIn {
     /**
      * Контракт для View
      */
-    interface View {
-        /**
-         * Метод должен выводить сообщение на экран
-         *
-         * @param message Сообщение ошибки
-         */
-        void showMessage(String message,Boolean isPositive);
-
+    interface View extends IView{
     }
 
     /**

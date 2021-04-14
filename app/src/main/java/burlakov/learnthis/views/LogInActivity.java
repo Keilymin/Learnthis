@@ -2,12 +2,8 @@ package burlakov.learnthis.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.DialogFragment;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,9 +14,8 @@ import burlakov.learnthis.R;
 import burlakov.learnthis.contracts.LogIn;
 import burlakov.learnthis.presenters.LogInPresenter;
 import burlakov.learnthis.util.EmailValidator;
-import burlakov.learnthis.views.dialogs.ForgotPasswordDialog;
-import burlakov.learnthis.views.dialogs.MessageDialog;
-import burlakov.learnthis.views.dialogs.SuccessSignUpDialog;
+import burlakov.learnthis.presenters.dialogs.ForgotPasswordDialog;
+import burlakov.learnthis.presenters.dialogs.MessageDialog;
 
 /**
  * Класс View для входа в систему

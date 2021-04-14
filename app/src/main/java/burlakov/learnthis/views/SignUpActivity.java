@@ -5,13 +5,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.rengwuxian.materialedittext.MaterialEditText;
 
@@ -21,8 +17,8 @@ import burlakov.learnthis.models.Role;
 import burlakov.learnthis.models.User;
 import burlakov.learnthis.presenters.SignUpPresenter;
 import burlakov.learnthis.util.EmailValidator;
-import burlakov.learnthis.views.dialogs.MessageDialog;
-import burlakov.learnthis.views.dialogs.SuccessSignUpDialog;
+import burlakov.learnthis.presenters.dialogs.MessageDialog;
+import burlakov.learnthis.presenters.dialogs.SuccessSignUpDialog;
 
 /**
  * View для регистрации в системе

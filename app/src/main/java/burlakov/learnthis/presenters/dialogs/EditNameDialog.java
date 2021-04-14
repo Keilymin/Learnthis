@@ -1,4 +1,4 @@
-package burlakov.learnthis.views.dialogs;
+package burlakov.learnthis.presenters.dialogs;
 
 import android.app.Dialog;
 import android.os.Bundle;
