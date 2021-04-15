@@ -55,7 +55,7 @@ public class EditEmailDialog extends DialogFragment {
         super.onStart();
         email = getDialog().findViewById(R.id.email);
         newEmail = getDialog().findViewById(R.id.newEmail);
-        password = getDialog().findViewById(R.id.password);
+        password = getDialog().findViewById(R.id.theme);
         error = getDialog().findViewById(R.id.error);
         EmailValidator.setValidateMaterialEditView(email, getContext());
         EmailValidator.setValidateMaterialEditView(newEmail, getContext());

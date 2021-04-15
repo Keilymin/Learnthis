@@ -42,6 +42,7 @@
     <string name="forgot_password_success_message">На вашу пошту висланий лист для зміни паролю
     </string>
     <string name="error_firstName">"Заповніть поле Ім'я"</string>
+    <string name="error_theme">"Заповніть поле Ім'я"</string>
     <string name="error_course_name">"Заповніть поле Курс"</string>
     <string name="error_secondName">Заповніть поле Прізвище</string>
     <string name="error_email">Эл. Пошта введена не корректно</string>
@@ -62,4 +63,16 @@
     <string name="enter_course_name">Введіть назву курсу</string>
     <string name="success_course_created">Курс успешно создан</string>
     <string name="delete">Видалити</string>
+    <string name="add">Додати</string>
+    <string name="learners">Учні</string>
+    <string name="choose_course_element">Оберіть тип створюваного елемента</string>
+    <string name="lecture">Лекція</string>
+    <string name="task">Завдання</string>
+    <string name="theme">Тема</string>
+    <string name="download">Завантажити</string>
+    <string name="add_materials">Додати матеріали</string>
+    <string name="add_lecture">Створити лекцію</string>
+    <string name="add_task">Створити завдання</string>
+    <string name="create">Створити</string>
+    <string name="prev_load_material">Спочатку завантажте матеріали</string>
 </resources>

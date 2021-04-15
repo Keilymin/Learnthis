@@ -38,7 +38,7 @@ public class LogInActivity extends AppCompatActivity implements LogIn.View, View
         toolbar.setNavigationOnClickListener(v -> finish());
 
         email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
+        password = findViewById(R.id.theme);
         logInButton = findViewById(R.id.buttonLogIn);
         passwordForgot = findViewById(R.id.pass_forgot);
 

@@ -45,7 +45,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUp.View, Vi
         firstName = findViewById(R.id.firstName);
         secondName = findViewById(R.id.secondName);
         email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
+        password = findViewById(R.id.theme);
         replyPassword = findViewById(R.id.replyPassword);
         signUpButton = findViewById(R.id.buttonSignUp);
         presenter = new SignUpPresenter(this, this);

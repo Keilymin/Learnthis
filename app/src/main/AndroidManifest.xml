@@ -37,6 +37,14 @@
             android:name=".views.SignUpChoiceActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.Learnthis.NoActionBar" />
+        <activity
+            android:name=".views.CourseManagerTeacherActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Learnthis.NoActionBar" />
+        <activity
+            android:name=".views.CreateLectureActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Learnthis.NoActionBar" />
     </application>
 
 </manifest>

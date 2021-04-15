@@ -19,7 +19,7 @@ public class TeacherMarksFragmentActivity extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_marks_teacher, container, false);
         TextView textView = root.findViewById(R.id.textView);
-        textView.setText(this.getClass().toString());
+        textView.setText(this.getClass().getName().toString());
         return root;
     }
 }

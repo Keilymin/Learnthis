@@ -2,7 +2,6 @@ package burlakov.learnthis.models.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,12 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
 import burlakov.learnthis.R;
 import burlakov.learnthis.contracts.TeacherCourses;
 import burlakov.learnthis.models.Course;
+import burlakov.learnthis.util.StorageDeleter;
 import burlakov.learnthis.views.CourseManagerTeacherActivity;
 
 /**
@@ -53,6 +55,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         holder.itemView.setOnClickListener(l -> {
             Intent intent = new Intent(context, CourseManagerTeacherActivity.class);
             intent.putExtra("courseId", course.getId());
+            intent.putExtra("name", course.getName());
             context.startActivity(intent);
         });
         holder.itemView.setOnCreateContextMenuListener((menu, v, menuInfo) -> {
@@ -63,8 +66,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
                 return true;
             });
             Delete.setOnMenuItemClickListener(item -> {
-                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Courses").child(course.getId());
-                ref.removeValue();
+                StorageDeleter.deleteDataByCourse(course, view);
                 return true;
             });
         });
